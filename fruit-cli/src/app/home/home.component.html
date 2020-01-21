@@ -1,0 +1,54 @@
+<h1 class="big-heading">Home Component</h1>
+
+<div class="row">
+    <!-- Panel -->
+    <div class="col-lg-4 col-md-5 col-sm-6">
+        <article class="panel panel-alt">
+            <div class="panel-heading">Login</div>
+            <div class="panel-body panel-list">
+
+                <form
+                    class="login-form"
+                    name="loginForm"
+                    (ngSubmit)="login()">
+
+                    <!-- User Name -->
+                    <div class="input-icon">
+                        <div class="form-group">
+                            <div class="col-no-pad">
+                                <input
+                                    name="txtUserName"
+                                    class="form-control"
+                                    [(ngModel)]="userName"
+                                    placeholder="Username"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-icon">
+                        <div class="form-group">
+                            <div class="col-no-pad">
+                                <input
+                                    type="password"
+                                    name="txtPassword"
+                                    class="form-control"
+                                    [(ngModel)]="password"
+                                    placeholder="Password"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="btn btn-circ btn-primary"
+                      id="btnSignIn">Sign In</button>
+
+                </form>
+
+            </div>
+        </article>
+    </div>
+</div>
