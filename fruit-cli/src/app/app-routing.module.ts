@@ -21,6 +21,11 @@ const routes: Routes = [
     resolve: { fruitItem: FruitDetailResolver }
   },
 
+  {
+    path: 'fruit-vendors',
+    loadChildren: () => import('./vendors/vendors.module').then(m => m.VendorsModule)
+  },
+
   // Default to the Home component if the specified path is not recognized.
   { path: '**', component: HomeComponent }
 ];
