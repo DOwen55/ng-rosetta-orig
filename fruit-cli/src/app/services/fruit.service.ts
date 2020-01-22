@@ -16,7 +16,6 @@ export class FruitService {
 
     // Create an Observable of the payload by calling the RXJS of() method.
     return of(this._ExtractFruitItemFromList(fruitItemId));
-
   }
 
   public GetFruitListSync(): Array<any> {

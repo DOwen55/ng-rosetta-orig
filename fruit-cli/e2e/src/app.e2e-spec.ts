@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('fruit-cli app is running!');
+    expect(page.getTitleText()).toEqual('ng-rosetta: Angular CLI (v8) Version');
   });
 
   afterEach(async () => {

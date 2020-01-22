@@ -16,13 +16,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FruitListComponent } from './fruit-list/fruit-list.component';
 
-import { FruitService } from './services/fruit-service';
+import { FruitService } from './services/fruit.service';
+import { FruitDetailComponent } from './fruit-detail/fruit-detail.component';
+import { FruitImageComponent } from './fruit-image/fruit-image.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FruitListComponent
+    FruitListComponent,
+    FruitDetailComponent,
+    FruitImageComponent
   ],
   imports: [
     BrowserModule,

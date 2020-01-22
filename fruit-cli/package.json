@@ -23,6 +23,7 @@
     "@grapecity/wijmo.angular2.all": "^5.20193.646",
     "@grapecity/wijmo.grid": "^5.20193.646",
     "@ng-bootstrap/ng-bootstrap": "^5.2.0",
+    "bootstrap": "^4.4.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

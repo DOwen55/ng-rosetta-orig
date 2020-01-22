@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FruitService } from './fruit-service';
+import { FruitService } from './fruit.service';
 
 describe('FruitServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

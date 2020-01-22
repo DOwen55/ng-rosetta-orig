@@ -6,7 +6,7 @@ import * as wjcGrid from '@grapecity/wijmo.grid';
 
 // Specify which features of our application we will require.
 // import { FruitItem } from '../shared/fruit.model';
-import { FruitService } from '../services/fruit-service';
+import { FruitService } from '../services/fruit.service';
 import { FruitItem } from '../shared/fruit.model';
 
 @Component({
@@ -49,6 +49,25 @@ export class FruitListComponent implements OnInit {
     this.loading = false;
   }
 
-  public loadDetail(e: wjcCore.EventArgs): void { }
+  // Consume the grid's row selection event arguments and navigate to the detail route.
+  public loadDetail(e: wjcCore.EventArgs): void {
+    // Extract the ID of the data item represented by the selected row.
+    const fruitItemID: number = (this.fruitList.currentItem as FruitItem).id as number;
+
+    // Navigate to the detail route, passing the data item ID as a route parameter via the syntax: ['route name', 'parameter1 value'].
+    // Note that the detail route declaration maps the incoming value via the 'fruit-detail/:id' route definition.
+    if ( this.detailRouteOption === 'route_resolver') {
+
+      // Note that using the Route Resolver option, any value being passed into the parameter1 value will be
+      // accessable in the Route Resolver via ActivatedRoute.params['id'].
+      this.router.navigate(['fruit-detail', fruitItemID]);
+
+    } else {
+
+      // Note that using the Complex Route option, any value being passed into the parameter1 value will be
+      // accessable in the recieving Component via ActivatedRoute.params['id'].
+      // this.router.navigate(['fruit-detail-complex', fruitItemID]);
+    }
+  }
 
 }

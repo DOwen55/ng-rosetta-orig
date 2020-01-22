@@ -1,0 +1,75 @@
+<h1 class="big-heading">Fruit Detail</h1>
+
+<div class="form" style="width:800px;">
+	<div class="form-group">
+		<div class="col-md-8">
+			<h2>
+				<span>{{currentFruitItem.commonName}} (</span>
+				<label class="control-label">Fruit ID</label>
+				<span>  {{currentFruitItem.id}})</span>
+			</h2>
+		</div>
+	</div>
+
+	<form [formGroup]="fruitForm" (ngSubmit)="onSubmitFruitForm()">
+		<div class="form-group">
+			<div class="col-md-8">
+				<!-- Using the custom fruititem-image Component, render the Fruit Item Image into an anchor that targets the detail page
+                by passing the appropriate model properties into the directive's required bindings. -->
+				<app-fruit-image [targetUrl]="currentFruitItem.URL" [imageUrl]="currentFruitItem.ImageURL">
+				</app-fruit-image>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-8">
+				<label class="control-label">Common Name</label>
+				<input required type="text" class="bento-input form-control" formControlName="commonName"
+					name="commonName">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-8">
+				<label class="control-label">Species</label>
+				<input required type="text" class="bento-input form-control" formControlName="species" name="species">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-8">
+				<label class="control-label">Region</label>
+				<input required type="text" class="bento-input form-control" formControlName="region" name="region">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-8">
+				<label class="control-label">Image URL</label>
+				<input required type="text" class="bento-input form-control" formControlName="ImageURL" name="ImageURL">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-8">
+				<label class="control-label">URL</label>
+				<input required type="text" class="bento-input form-control" formControlName="URL" name="URL">
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+		  <div class="col-md-8">
+			<div>
+			  <div class="bento-form-buttons">
+				<input class="btn btn-primary" [disabled]="!fruitForm.valid" type="submit" value="Save">
+				<input class="btn btn-outline-primary" type="button" (click)="onResetForm()" value="Reset">
+				<input class="btn btn-outline-primary" type="button" (click)="onCancel()" value="Cancel">
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+	</form>
+</div>
